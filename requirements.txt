@@ -1,0 +1,8 @@
+1. pip install "routellm[serve,eval]"
+2. export OPENAI_API_KEY = Your_openai_API_Key
+3. export GROQ_API_KEY = Your_groq_API_Key
+4. Calibration:  python -m routellm.calibrate_threshold --routers mf --strong-model-pct 0.5
+5. pip install chainlit rich
+6. Add the 'litellm.drop_params=True' in env\Lib\site-packages\litellm\utils.py 
+7. Run the server for UI:  python -m routellm.openai_server --routers mf --weak-model groq/llama3-8b-8192
+8. Run the command:  chainlit run UI.py
